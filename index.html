@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<label for="">Mes</label>
+<select name="mes" id="meses">
+    <option  value="Enero">Enero</option>
+    <option  value="Febrero">Febrero</option>
+    <option  value="Marzo">Marzo</option>
+    <option  value="Abril">Abril</option>
+    <option  value="Mayo">Mayo</option>
+    <option  value="Junio">Junio</option>
+    <option  value="Julio">Julio</option>
+    <option  value="Agosto">Agosto</option>
+    <option  value="Septiembre">Septiembre</option>
+    <option  value="Octubre">Octubre</option>
+    <option  value="Noviembre">Noviembre</option>
+    <option  value="Diciembre">Diciembre</option>
+</select>
+<br>
+<br>
+<label for="">Año</label>
+
+<select name="año" id="años">
+    <option value="2023">2023</option>
+    <option value="2022">2022</option>
+    <option value="2021">2021</option>
+    <option value="2020">2020</option>
+    <option value="2019">2019</option>
+    <option value="2018">2018</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
+    <option value="2014">2014</option>
+    <option value="2013">2013</option>
+</select>
+<br>
+<br>
+<label for="">Trimestre</label>
+<input type="number" placeholder="Escribe el numero de trimestre" id="tri">
+<br>
+<br>
+<br>
+<div>
+<label for="" class="radio-inline">Pierde
+<input type="radio" name="tipo"  value="Pierde" id="pg" checked  ></label>
+<label for=""  class="radio-inline">Gana
+<input type="radio" value="Ganaste" id="pg" name="tipo" ></label>
+</div>
+<br>
+<br>
+<br>
+<label for="">Competencia</label>
+<input type="text" placeholder="Escribe tu competencia" id="competencia">
+<br>
+<br>
+<!-- <button id="cargar" onclick="Enviar(document.getElementById(meses.value,años.value,tri.value,check.value,competencia.value))" >Cargar</button> -->
+<!-- <input type="submit" value="Cargar"> -->
+<button id="cargar" onclick="document.getElementById(Enviar(meses.value,años.value,tri.value,pg = document.querySelector('input[name=tipo]:checked').value,competencia.value)),unafun(Enviar())">Cargar</button>
+ 
+
+    <section >
+        <p id="resultado"></p>
+    </section>
+
+    <script src="../js/model.js"></script>
+
+</body>
+</html>
