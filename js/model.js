@@ -29,26 +29,21 @@
 // //     console.log(compe);
 // // console.log(check);
 // }
-
+const result = document.getElementById('resultado');
 
 function Enviar(meses,años,tri,pg,competencia){
-    // const result = document.getElementById('resultado');
-    // result.textContent = (meses+" "+años+" "+tri+" "+pg+" "+competencia);
+
     const nuevo = [meses,años,tri,pg,competencia];
-    //  result.textContent = (nuevo);
     return nuevo;
 }
 
-
-
-function unafun(){
-    const recibir = Enviar();
-    const result = document.getElementById('resultado');
-    result.textContent = recibir;
+function unafun() {
+    const recibir = Enviar(meses,años,tri,pg,competencia);
+    result.textContent = `${recibir[0]} ${recibir[1]} ${recibir[2]} ${recibir[3]} ${recibir[4]}`;
     console.log(recibir);
    
 }
 
-// unafun();
+
 
 
