@@ -31,24 +31,95 @@
 // }
 
 
-function Enviar(meses,años,tri,pg,competencia){
+function Enviar(meses,años,tri,pg,competencia,fecha){ 
     // const result = document.getElementById('resultado');
     // result.textContent = (meses+" "+años+" "+tri+" "+pg+" "+competencia);
-    const nuevo = [meses,años,tri,pg,competencia];
-    //  result.textContent = (nuevo);
-    return nuevo;
+    let nuevo = [meses,años,tri,pg,competencia,fecha];
+    let nuevo1 = nuevo[5];
+    let recibir = unafun(nuevo1);
+
+    let mostrar = pasar(recibir);
+ 
+    console.log(mostrar);
+
+  
 }
 
 
+function unafun(nuevo1){
+    // let result = document.getElementById('resultado');
+    // result.textContent = `${nuevo[0]} ${nuevo[1]} ${nuevo[2]} ${nuevo[3]} ${nuevo[4]}`;
+    // console.log(nuevo);
 
-function unafun(){
-    const recibir = Enviar();
-    const result = document.getElementById('resultado');
-    result.textContent = recibir;
-    console.log(recibir);
+    let nuevo2 = nuevo1.split("-");
+    let mes = nuevo2[1];
+    // console.log(mes);
+    return mes;
+}
+
+function pasar(nuevo4){
+    if(nuevo4 === '01'){
+        return 'Enero';
+    }else if(nuevo4 === '02'){
+        return 'Febrero';
+    }else if(nuevo4 === '03'){
+        return 'Marzo';
+    }else if(nuevo4 === '04'){
+        return 'Abril';
+    }else if(nuevo4 === '05'){
+        return 'Mayo';
+    }else if(nuevo4 === '06'){
+        return 'Junio';
+    }else if(nuevo4 === '07'){
+        return 'Julio';
+    }else if(nuevo4 === '08'){
+        return 'Agosto';
+    }else if(nuevo4 === '09'){
+        return 'Septiembre';
+    }else if(nuevo4 === '10'){
+        return 'Octubre';
+    }else if(nuevo4 === '11'){
+        return 'Noviembre';
+    }else if(nuevo4 === '12'){
+        return 'Diciembre';
+    }
+}
+
+const diseño = document.getElementById('competencia');
+
+diseño.addEventListener('input',diseño1);
+const papa = document.getElementById('padre');
+
+function diseño1(){
+   if(diseño.value === "Diseño"){
+    console.log('Diseño')
    
+    const contenido = document.createElement('select');
+    const hijitos = document.createElement('option');
+    hijitos.innerHTML = `<option>Resultado1</option>`;
+    contenido.appendChild(hijitos);
+    papa.appendChild(contenido);
+   }else if(diseño.value === 'Analisis'){
+    console.log('Analisis')
+    const contenido1 = document.createElement('select');
+    const hijitos1 = document.createElement('option');
+    hijitos1.innerHTML = `<option>Resultado1</option>`;
+    contenido1.appendChild(hijitos1);
+    papa.appendChild(contenido1);
+   }
+    
+
 }
 
-// unafun();
+
+// const analisis = document.getElementById('analisis');
+
+// analisis.addEventListener('',analisisi1);
+
+// function analisisi1 (){
+//     console.log('analisis')
+    
+
+// }
 
 

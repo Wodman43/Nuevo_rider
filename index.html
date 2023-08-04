@@ -45,6 +45,11 @@
 <br>
 <br>
 <br>
+<label for="">Fecha:</label>
+<input type="date" id="fecha">
+<br>
+<br>
+<br>
 <div>
 <label for="" class="radio-inline">Pierde
 <input type="radio" name="tipo"  value="Pierde" id="pg" checked  ></label>
@@ -55,13 +60,19 @@
 <br>
 <br>
 <label for="">Competencia</label>
-<input type="text" placeholder="Escribe tu competencia" id="competencia">
+<div id="padre">
+<select name="" id="competencia">
+    <option value="" selected disabled>Escoge Una opcion</option>
+    <option value="Diseño" id="diseño" >Diseño</option>
+    <option value="Analisis" id="analisis">Analisis</option>
+</select>
+</div> 
 <br>
 <br>
 <!-- <button id="cargar" onclick="Enviar(document.getElementById(meses.value,años.value,tri.value,check.value,competencia.value))" >Cargar</button> -->
 <!-- <input type="submit" value="Cargar"> -->
-<button id="cargar" onclick="document.getElementById(Enviar(meses.value,años.value,tri.value,pg = document.querySelector('input[name=tipo]:checked').value,competencia.value)),unafun(Enviar())">Cargar</button>
- 
+<button id="cargar" onclick="document.getElementById(Enviar(meses.value,años.value,tri.value,pg = document.querySelector('input[name=tipo]:checked').value,competencia.value,fecha.value),unafun())">Cargar</button>
+
 
     <section >
         <p id="resultado"></p>
