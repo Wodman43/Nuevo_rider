@@ -29,7 +29,7 @@
 // //     console.log(compe);
 // // console.log(check);
 // }
-
+const result = document.getElementById('resultado');
 
 function Enviar(meses,años,tri,pg,competencia,fecha){ 
     // const result = document.getElementById('resultado');
@@ -93,7 +93,6 @@ const papa = document.getElementById('padre');
 function diseño1(){
    if(diseño.value === "Diseño"){
     console.log('Diseño')
-   
     const contenido = document.createElement('select');
     const hijitos = document.createElement('option');
     hijitos.innerHTML = `<option>Resultado1</option>`;
@@ -111,15 +110,5 @@ function diseño1(){
 
 }
 
-
-// const analisis = document.getElementById('analisis');
-
-// analisis.addEventListener('',analisisi1);
-
-// function analisisi1 (){
-//     console.log('analisis')
-    
-
-// }
 
 
