@@ -13,9 +13,9 @@ console.log(midefinitiva);
 };
 
 function porcentaje(suma){
-   let p1 = suma[0] *0.3
-   let p2 = suma[1] *0.3
-   let p3 = suma[2] *0.3
+   let p1 = suma[0] *0.03
+   let p2 = suma[1] *0.03
+   let p3 = suma[2] *0.03
     // console.log(p1 , p2 , p3);
     let mostrar = [p1, p2, p3];
 
@@ -30,8 +30,8 @@ const nueva = (arreglo,porcentaje) => {
     arreglo.forEach(nota => ( suma += nota));
    suma = suma / arreglo.length ;
 
-  porcentaje(arreglo);
-  console.log(porcentaje(arreglo))
+//   porcentaje(arreglo);
+  console.log(porcentaje(arreglo));
    return suma;
   
 }  
