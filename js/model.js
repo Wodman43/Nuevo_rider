@@ -91,7 +91,9 @@ diseño.addEventListener('input',diseño1);
 const papa = document.getElementById('padre');
 
 function diseño1(){
+    
    if(diseño.value === "Diseño"){
+    // contenido.classlist.add('chao');
     console.log('Diseño')
     const contenido = document.createElement('select');
     const hijitos = document.createElement('option');
@@ -99,12 +101,14 @@ function diseño1(){
     contenido.appendChild(hijitos);
     papa.appendChild(contenido);
    }else if(diseño.value === 'Analisis'){
+    // contenido1.classlist.add('chao');
     console.log('Analisis')
     const contenido1 = document.createElement('select');
     const hijitos1 = document.createElement('option');
     hijitos1.innerHTML = `<option>Resultado1</option>`;
     contenido1.appendChild(hijitos1);
     papa.appendChild(contenido1);
+
    }
     
 
