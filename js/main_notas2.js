@@ -13,17 +13,32 @@ const getdata = () =>{
 }
 
         const showdata = (notas) =>{
+            let objeto = {};
+            notas.forEach(e =>{
+                let nose = 'nota'+e;
+                objeto[nose] = e;
+            });
+          
+            console.log(objeto);
+
             return new Promise((resuleve1,rechaza1)=>{
             settext('Esperando Autorizacion');
             setTimeout(()=>{
                 let suma = 0;
-                notas.forEach(nota => suma += nota);
+                let multi = 0.03;
+                let resultado;
+                notas.forEach(nota =>{ suma += nota;
+                    resultado = multi *nota;
+                });
                 suma = suma / notas.length;
                 console.log(suma)
-                let p1 = notas[0] * 0.03;
-                let p2 = notas[1] * 0.03;
-                let p3 = notas[2] * 0.03;
-                const todo = [p1,p2,p3];
+                const todo = resultado;
+                // let p1 = notas[0] * 0.03;
+                // let p2 = notas[1] * 0.03;
+                // let p3 = notas[2] * 0.03;
+                // const todo = [p1,p2,p3];
+              
+
                 console.log(todo);
                 resuleve1({jugador:suma,porcen:todo});
             },2000)
