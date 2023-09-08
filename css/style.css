@@ -4,6 +4,11 @@ body{
 }
 
 .ola{
+    display: none;
+ 
+}
+
+.modal{
     position:absolute;
     background: white;
    top: 50%;
@@ -12,4 +17,3 @@ body{
    padding: 20px;
    
 }
-
