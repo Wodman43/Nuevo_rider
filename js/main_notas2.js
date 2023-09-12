@@ -73,11 +73,11 @@ array.forEach(e=>{
 
 function elimar (id){
 console.log('borrado', id);
-array = array.filter(e => e.id !== id);
+array = array.filter(e => e.ideli !== id);
 settext();
 }
 
-function editar (){
+function editar (e){
 // let input1 = document.getElementById('input1');
 // let input2 = document.getElementById('input1');
 // let input3 = document.getElementById('input1');
@@ -87,7 +87,7 @@ function editar (){
 let tal = document.querySelector('input')
 
 tal.disabled = false;
-
+e = tal;
 }
 
 
