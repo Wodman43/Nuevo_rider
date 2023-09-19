@@ -29,7 +29,7 @@ const settext = data=>{
     <th>Nota 3</th>
     <th>Nota def</th>
     <th>Funciones</th`;
-array.forEach(e=>{
+array.forEach((e,i)=>{
     console.log(e);
     let edit = document.createElement('button');
     edit.textContent = 'Editar';
@@ -37,22 +37,22 @@ array.forEach(e=>{
     save.textContent = 'Guardar';
     let eliminar1 = document.createElement('button');
     eliminar1.textContent= 'Eliminar'
-    edit.addEventListener('click',editar);
-    save.addEventListener('click',guardar);
+    edit.addEventListener('click',()=>{editar(i)});
+    // save.addEventListener('click',guardar);
     
     let tablita = document.createElement('tr');
     let ident = document.createElement('td');
-    ident.innerHTML = `<td><input type='text' id='input1' value = ' ${e.id}' disabled = ""></td>`;
+    ident.innerHTML = `<td><input type='text' id='input1_${i}' value = ' ${e.id}' disabled = ""></td>`;
     let nombre = document.createElement('td');
-    nombre.innerHTML =`<td><input type='text' id='input2' value = '${e.nom}' disabled = ""></td>`;
+    nombre.innerHTML =`<td><input type='text' id='input2_${i}' value = '${e.nom}' disabled = ""></td>`;
     let nota1 = document.createElement('td');
-    nota1.innerHTML =`<td><input type='number' id='input3' value = '${e.nota[0]}' disabled = ""></td>`;
+    nota1.innerHTML =`<td><input type='number' id='input3_${i}' value = '${e.nota[0]}' disabled = ""></td>`;
     let nota2 = document.createElement('td');
-    nota2.innerHTML =`<td><input type='number' id='input4' value = '${e.nota[1]}' disabled = ""></td>`;
+    nota2.innerHTML =`<td><input type='number' id='input4_${i}' value = '${e.nota[1]}' disabled = ""></td>`;
     let nota3 = document.createElement('td');
-    nota3.innerHTML =`<td><input type='number' id='input5' value = '${e.nota[2]}' disabled = ""></td>`;
+    nota3.innerHTML =`<td><input type='number' id='input5_${i}' value = '${e.nota[2]}' disabled = ""></td>`;
     let definitiva = document.createElement('td');
-    definitiva.innerHTML = `<td><input type='number' id='input6' value = '${e.def}' disabled></td>`;
+    definitiva.innerHTML = `<td><input type='number' id='input6_${i}' value = '${e.def}' disabled></td>`;
     tablita.appendChild(ident);
     tablita.appendChild(nombre);
     tablita.appendChild(nota1);
@@ -78,45 +78,23 @@ settext();
 }
 
 
-    function editar() {
-        let tales = document.querySelectorAll('input');
-        tales.forEach(e => {
+    function editar(i) {
+        let input1 = document.getElementById(`input1_${i}`);
+        let input2 = document.getElementById(`input2_${i}`);
+        let input3 = document.getElementById(`input3_${i}`);
+        let input4 = document.getElementById(`input4_${i}`);
+        let input5 = document.getElementById(`input5_${i}`);
+
+        let arr = [input1, input2, input3, input4, input5]
+
+        arr.forEach(e=>{
             e.disabled = false;
-        });
+        })
+        // let tales = document.querySelectorAll('input');
+        // tales.forEach(e => {
+        //     e.disabled = false;
+        // });
     }
-
-    // ... Código existente ...
-
-// Agrega un evento 'click' al botón 'Guardar'
-function guardar() {
-    // Obtén los nuevos valores de los inputs editados
-    const newId = document.getElementById('input1').value;
-    const newNom = document.getElementById('input2').value;
-    const newNota1 = document.getElementById('input3').value;
-    const newNota2 = document.getElementById('input4').value;
-    const newNota3 = document.getElementById('input5').value;
-    
-    // Encuentra el elemento correspondiente en el array y actualiza sus propiedades
-    const updatedItemIndex = array.findIndex(e => e.ideli === e.ideli); // Reemplaza 'e.ideli' con el valor correcto para identificar el elemento a actualizar
-    if (updatedItemIndex !== -1) {
-        array[updatedItemIndex].id = newId;
-        array[updatedItemIndex].nom = newNom;
-        array[updatedItemIndex].nota[0] = parseFloat(newNota1); // Convierte a número
-        array[updatedItemIndex].nota[1] = parseFloat(newNota2); // Convierte a número
-        array[updatedItemIndex].nota[2] = parseFloat(newNota3); // Convierte a número
-        // Puedes recalcular la nota definitiva aquí si es necesario
-        // array[updatedItemIndex].def = calcularDefinitiva(newNota1, newNota2, newNota3);
-    }
-
-    // Vuelve a llamar a settext para actualizar la tabla con los nuevos valores
-    settext();
-};
-
-// ... Resto del código ...
-
-    
-    
-
 
 
 const getdata = () =>{
