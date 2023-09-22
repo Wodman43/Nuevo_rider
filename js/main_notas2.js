@@ -38,7 +38,7 @@ array.forEach((e,i)=>{
     let eliminar1 = document.createElement('button');
     eliminar1.textContent= 'Eliminar'
     edit.addEventListener('click',()=>{editar(i)});
-    // save.addEventListener('click',guardar);
+    save.addEventListener('click',()=> {guardar(i)});
     
     let tablita = document.createElement('tr');
     let ident = document.createElement('td');
@@ -78,23 +78,48 @@ settext();
 }
 
 
-    function editar(i) {
-        let input1 = document.getElementById(`input1_${i}`);
-        let input2 = document.getElementById(`input2_${i}`);
-        let input3 = document.getElementById(`input3_${i}`);
-        let input4 = document.getElementById(`input4_${i}`);
-        let input5 = document.getElementById(`input5_${i}`);
+function editar(i) {
+    let input1 = document.getElementById(`input1_${i}`);
+    let input2 = document.getElementById(`input2_${i}`);
+    let input3 = document.getElementById(`input3_${i}`);
+    let input4 = document.getElementById(`input4_${i}`);
+    let input5 = document.getElementById(`input5_${i}`);
 
-        let arr = [input1, input2, input3, input4, input5]
+    let arr = [input1, input2, input3, input4, input5];
 
-        arr.forEach(e=>{
-            e.disabled = false;
+    arr.forEach(e => {
+        e.disabled = false;
+    });
+
+    return new Promise((resolve, reject) => {
+        resolve(arr.map(e => e.value));
+    });
+}
+
+
+const guardar = (i) => {
+    editar(i).then(nvalor => {
+
+            array[i].id = nvalor[0];
+            array[i].nom = nvalor[1];
+            array[i].nota[0] = parseFloat(nvalor[2]);
+            array[i].nota[1] = parseFloat(nvalor[3]);
+            array[i].nota[2] = parseFloat(nvalor[4]);
+
+            const nuevadef = (array[i].nota[0] + array[i].nota[1] + array[i].nota[2]) / 3;
+            array[i].def = nuevadef;
+
+            nvalor.forEach((valor, e) => {
+                let input = document.getElementById(`input${e + 1}_${i}`);
+                input.value = valor;
+                input.disabled = true;
+            });
+            settext();
         })
-        // let tales = document.querySelectorAll('input');
-        // tales.forEach(e => {
-        //     e.disabled = false;
-        // });
-    }
+};
+
+
+
 
 
 const getdata = () =>{
@@ -142,7 +167,7 @@ const getdata = () =>{
                 // let p2 = notas[1] * 0.03;
                 // let p3 = notas[2] * 0.03;
                 // const todo = [p1,p2,p3];
-              
+             
 
                 // console.log(todo);
                 resuleve1({jugador:suma});
