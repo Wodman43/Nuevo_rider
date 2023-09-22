@@ -1,0 +1,7 @@
+Hola profe rider
+
+trabajos 
+
+1. en el notas_promesas_y_async.html = estan llamados los dos Js porque estan compartiendo el mismo html- estan comentados
+2. en el notas_promesas_y_callback = estan llamados los dos Js porque estan compartiendo el mismo html- estan comentados
+3. lo demas son ejemplos 
